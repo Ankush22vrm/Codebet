@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 // ✅ CORS Setup (allow frontend domain)
 app.use(cors({
-  origin: 'http://localhost:5173', // <-- allow only your frontend
+  origin: process.env.CLIENT_URL , // <-- allow only your frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
@@ -31,5 +31,5 @@ app.use("/challenge", challengeRoutes);
 initSocket(server);
 
 // ✅ Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ||4000;
 server.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

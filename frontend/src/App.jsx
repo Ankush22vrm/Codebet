@@ -22,13 +22,14 @@ const App = () => {
   const user = useSelector((state) => state.user.user);
   const [socket, setSocket] = useState(null);
 
+
   useEffect(() => {
-    const newSocket = io("http://localhost:5000");
+    const newSocket = io(import.meta.env.VITE_SERVER_URL || "http://localhost:4000" );
     setSocket(newSocket);
     return () => newSocket.disconnect();
   }, []);
   // const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token && !user) {
@@ -49,7 +50,7 @@ const App = () => {
   }, [dispatch, user]);
 
   // if (loading) return <div className="text-white text-center py-10">Loading...</div>;
-
+  
   return (
     <div className="font-sans bg-background text-white min-h-screen">
       <Router>
