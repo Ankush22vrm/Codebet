@@ -12,8 +12,8 @@ const testimonials = [
     {
         name: "Ankush",
         quote: "The pressure of live duels helped me solve faster and smarter. Highly addictive.",
-        // img: "https://i.pinimg.com/736x/cc/42/2c/cc422c8aaafc6b9bb9c61237f177d208.jpg",
-           img:"src/assets/ankush.jpg" ,
+         img: "https://i.pinimg.com/736x/cc/42/2c/cc422c8aaafc6b9bb9c61237f177d208.jpg",
+          // img:"src/assets/ankush.jpg" ,
     },
     {
         name: "Ayush",
